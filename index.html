@@ -14,7 +14,7 @@
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
-            padding-top: 150px;
+            padding-top: 160px;
         }
         header {
             position: fixed;
@@ -49,8 +49,8 @@
         }
         .container {
             max-width: 900px;
-            margin: -60px auto 0;
-            padding: 40px 20px;
+            margin: 0 auto;
+            padding: 20px 20px;
             text-align: center;
             background-color: #f9fafb;
         }
@@ -84,11 +84,11 @@
             justify-content: center;
             gap: 20px;
             margin: 20px 0;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
         }
         .image-section img {
             width: 100%;
-            max-width: 400px;
+            max-width: 450px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -98,7 +98,7 @@
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            margin: 20px auto; /* Reduced from 40px to 20px to halve the space */
+            margin: 5px auto;
             max-width: 450px;
             animation: fadeIn 1s ease-in;
             display: flex;
@@ -141,7 +141,7 @@
             background-color: #006400;
             color: #fff;
             padding: 10px;
-            margin-top: 40px;
+            margin-top: 0;
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -163,8 +163,12 @@
             }
             h1 { font-size: 1.8em; }
             h2 { font-size: 1.5em; }
-            .image-section { flex-direction: column; }
-            .image-section img { max-width: 100%; }
+            .image-section {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                gap: 10px;
+            }
+            .image-section img { max-width: 45%; }
             form { padding: 20px; }
             input[type="email"] { width: 90%; }
             body { padding-top: 120px; }
@@ -205,4 +209,5 @@
     </footer>
 </body>
 </html>
+
 
