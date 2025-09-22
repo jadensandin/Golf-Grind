@@ -43,9 +43,10 @@
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         h2 {
-            font-size: 1.8em;
+            font-size: 1.5em; /* Matched pop-up title size */
+            color: #006400; /* Matched pop-up title color */
             font-weight: 400;
-            margin-bottom: 20px;
+            margin-bottom: 15px; /* Matched pop-up title margin */
         }
         .container {
             max-width: 900px;
@@ -109,16 +110,20 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        input[type="email"] {
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
             width: 80%;
             padding: 12px;
-            margin: 15px 0;
+            margin: 10px 0;
             border: 2px solid #90EE90;
             border-radius: 5px;
             font-size: 1em;
             transition: border-color 0.3s ease;
         }
-        input[type="email"]:focus {
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus {
             border-color: #006400;
             outline: none;
         }
@@ -193,7 +198,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 1em;
-            margin-top: 10px; /* Added to move Submit button down slightly */
+            margin-top: 10px;
         }
         .modal button[type="submit"]:hover {
             background: linear-gradient(90deg, #004d00, #70d070);
@@ -238,7 +243,9 @@
             }
             .image-section img { max-width: 45%; }
             form { padding: 20px; }
-            input[type="email"] { width: 90%; }
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"] { width: 90%; }
             body { padding-top: 120px; }
             footer { flex-direction: column; gap: 5px; text-align: center; }
             .modal-content { width: 95%; }
@@ -263,11 +270,12 @@
             <img src="https://swinggolflounge.ca/wp-content/uploads/2020/11/Swing-Golf-Lounge-Virtual-Golf-Toronto-01.jpg" alt="Golf Simulator Interior">
             <img src="https://a.storyblok.com/f/117513/1200x630/5cecb7dc8f/trackman_golf_simulator.jpg" alt="Trackman Simulator">
         </div>
-        <h2>Reserve a Membership</h2>
-        <p>Enter your email to join the waitlist</p>
-        <form name="waitlist" method="POST" data-netlify="true">
+        <h2>Sign up to Start Improving</h2>
+        <form name="waitlist" method="POST" data-netlify="true" id="mainForm">
             <input type="hidden" name="form-name" value="waitlist">
-            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required id="emailInput">
+            <input type="tel" name="phone" placeholder="Phone" required>
             <button type="submit">Join Waitlist</button>
         </form>
         <p>We will contact you soon with more details</p>
@@ -290,9 +298,21 @@
         </div>
     </div>
     <script>
+        let hasInteracted = false;
+
+        document.getElementById('emailInput').addEventListener('input', function() {
+            hasInteracted = true;
+        });
+
+        document.getElementById('mainForm').addEventListener('submit', function() {
+            hasInteracted = true;
+        });
+
         window.addEventListener('load', function() {
             setTimeout(function() {
-                document.getElementById('modal').style.display = 'flex';
+                if (!hasInteracted) {
+                    document.getElementById('modal').style.display = 'flex';
+                }
             }, 8000);
         });
 
@@ -314,6 +334,7 @@
     </script>
 </body>
 </html>
+
 
 
 
