@@ -14,13 +14,26 @@
             text-align: center;
         }
         header {
-            background-color: #006400; /* Dark green for golf theme */
+            background-color: #006400;
             color: white;
             padding: 60px 20px;
+            position: relative;
+        }
+        header img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.3;
         }
         h1 {
             margin: 0;
             font-size: 2.5em;
+            position: relative;
+            z-index: 1;
         }
         h2 {
             font-size: 1.8em;
@@ -29,6 +42,12 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+        }
+        .image-section img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 20px 0;
         }
         ul {
             list-style: none;
@@ -74,6 +93,7 @@
 </head>
 <body>
     <header>
+        <img src="https://via.placeholder.com/800x300?text=Golf+Sim+Bay" alt="Golf Simulator Bay">
         <h1>Beat Alberta Winters: Exclusive 24/7 Golf Sim Access</h1>
         <p>Join the waitlist for free and get early priority—plus a bonus Winter Swing Guide!</p>
     </header>
@@ -81,13 +101,16 @@
     <div class="container">
         <h2>Why Join Our Hyper-Local Golf Gym?</h2>
         <ul>
-            <li>Self-serve keycard entry—no staff, no distractions</li>
-            <li>Unlimited bookings (capped slots for fairness)</li>
-            <li>Limited to 50 members for exclusivity</li>
-            <li>Pro-level Trackman tech in Central Alberta</li>
+            <li>Unlimited Bookings</li>
+            <li>Limited Memberships</li>
+            <li>Trackman Simulator</li>
         </ul>
 
-        <h2>Sign Up for Free—No Commitment</h2>
+        <div class="image-section">
+            <img src="https://via.placeholder.com/600x400?text=Winter+Golf+Scene" alt="Winter Golf Scene">
+        </div>
+
+        <h2>Reserve a Membership</h2>
         <p>Enter your email to join the waitlist and receive your free guide instantly.</p>
 
         <!-- Netlify Form: Handles submissions automatically -->
@@ -98,10 +121,6 @@
         </form>
 
         <p>We'll send you a confirmation email with your free Winter Swing Guide PDF.</p>
-
-        <h2>What Golfers Are Saying</h2>
-        <p>"Can't wait for year-round practice without the cold!" — Local Golfer</p>
-        <p>"Exclusive access sounds perfect for serious players." — Alberta Golf Member</p>
     </div>
 
     <footer>
