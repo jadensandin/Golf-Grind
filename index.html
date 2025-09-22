@@ -14,10 +14,14 @@
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
+            padding-top: 150px;
         }
         header {
-            position: relative;
-            height: 220px; /* Reduced from 250px to move green up slightly */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
             background: linear-gradient(135deg, #006400 0%, #90EE90 100%);
             color: #fff;
             text-align: center;
@@ -25,16 +29,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 1000;
         }
         .header-content {
             position: relative;
             z-index: 1;
-            padding: 20px 20px 0; /* Adjusted to fit content in shorter height */
+            padding: 10px 20px 0;
         }
         h1 {
-            font-size: 2.5em;
+            font-size: 2em;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         h2 {
@@ -44,7 +49,7 @@
         }
         .container {
             max-width: 900px;
-            margin: -60px auto 0; /* Adjusted from -80px to align with new height */
+            margin: -60px auto 0;
             padding: 40px 20px;
             text-align: center;
             background-color: #f9fafb;
@@ -93,7 +98,7 @@
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            margin: 40px auto;
+            margin: 20px auto; /* Reduced from 40px to 20px to halve the space */
             max-width: 450px;
             animation: fadeIn 1s ease-in;
             display: flex;
@@ -135,11 +140,14 @@
         footer {
             background-color: #006400;
             color: #fff;
-            padding: 20px;
+            padding: 10px;
             margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
         footer p {
-            margin: 5px 0;
+            margin: 0;
         }
         @media (max-width: 900px) {
             .benefits {
@@ -153,12 +161,14 @@
             .benefit-item h3 {
                 font-size: 1.1em;
             }
-            h1 { font-size: 2em; }
+            h1 { font-size: 1.8em; }
             h2 { font-size: 1.5em; }
             .image-section { flex-direction: column; }
             .image-section img { max-width: 100%; }
             form { padding: 20px; }
             input[type="email"] { width: 90%; }
+            body { padding-top: 120px; }
+            footer { flex-direction: column; gap: 5px; text-align: center; }
         }
     </style>
 </head>
@@ -178,7 +188,7 @@
         </div>
         <div class="image-section">
             <img src="https://swinggolflounge.ca/wp-content/uploads/2020/11/Swing-Golf-Lounge-Virtual-Golf-Toronto-01.jpg" alt="Golf Simulator Interior">
-            <img src=https://a.storyblok.com/f/117513/1200x630/5cecb7dc8f/trackman_golf_simulator.jpg>
+            <img src="https://a.storyblok.com/f/117513/1200x630/5cecb7dc8f/trackman_golf_simulator.jpg" alt="Trackman Simulator">
         </div>
         <h2>Reserve a Membership</h2>
         <p>Enter your email to join the waitlist</p>
