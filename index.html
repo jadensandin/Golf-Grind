@@ -149,6 +149,74 @@
         footer p {
             margin: 0;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border: 2px solid #006400;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .modal h3 {
+            font-size: 1.5em;
+            color: #006400;
+            margin-bottom: 15px;
+        }
+        .modal input {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 2px solid #006400;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .modal button[type="submit"] {
+            background: linear-gradient(90deg, #006400, #90EE90);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px; /* Added to move Submit button down slightly */
+        }
+        .modal button[type="submit"]:hover {
+            background: linear-gradient(90deg, #004d00, #70d070);
+        }
+        .modal .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ccc;
+            color: #333;
+            width: 25px;
+            height: 25px;
+            border: none;
+            border-radius: 50%;
+            font-size: 1em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal .close:hover {
+            background: #aaa;
+        }
         @media (max-width: 900px) {
             .benefits {
                 flex-wrap: nowrap;
@@ -173,21 +241,22 @@
             input[type="email"] { width: 90%; }
             body { padding-top: 120px; }
             footer { flex-direction: column; gap: 5px; text-align: center; }
+            .modal-content { width: 95%; }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>Grind your Golf Swing this Winter: Exclusive 24/7 Golf Sim in Red Deer</h1>
+            <h1>Grind your Golf Swing this Winter: Exclusive 24/7 Golf Sim Access</h1>
             <p>Join the waitlist for free and get early priority booking</p>
         </div>
     </header>
     <div class="container">
-        <h3>Why Join?</h3>
+        <h2>Why Join?</h2>
         <div class="benefits">
             <div class="benefit-item"><h3>Private and Hassle Free Access 24/7</h3></div>
-            <div class="benefit-item"><h3>Limited Memberships- Book Unlimited Spots</h3></div>
+            <div class="benefit-item"><h3>Limited Memberships- Unlimited Booking Slots</h3></div>
             <div class="benefit-item"><h3>Tour Trusted Trackman Simulator</h3></div>
         </div>
         <div class="image-section">
@@ -198,7 +267,7 @@
         <p>Enter your email to join the waitlist</p>
         <form name="waitlist" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="waitlist">
-            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="email" name="email" placeholder="Email" required>
             <button type="submit">Join Waitlist</button>
         </form>
         <p>We will contact you soon with more details</p>
@@ -207,8 +276,45 @@
         <p>Privacy: We respect your data</p>
         <p>© 2025 Golf Grind</p>
     </footer>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button type="button" class="close" onclick="closeModal()">X</button>
+            <h3>Join the Golf Grind Waitlist</h3>
+            <form name="modalWaitlist" method="POST" data-netlify="true" id="modalForm">
+                <input type="hidden" name="form-name" value="modalWaitlist">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('modal').style.display = 'flex';
+            }, 8000);
+        });
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        document.getElementById('modalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch('/', {
+                method: 'POST',
+                body: formData
+            }).then(() => {
+                closeModal();
+                alert('Thank you for joining the waitlist! We will contact you soon.');
+            }).catch(error => console.error('Error:', error));
+        });
+    </script>
 </body>
 </html>
+
 
 
 
