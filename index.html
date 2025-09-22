@@ -3,117 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Central Alberta Golf Sim Gym - Join the Waitlist</title>
+    <title> - Reserve Your Membership</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9fafb;
             color: #333;
-            text-align: center;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
         header {
-            background-color: #006400;
-            color: white;
-            padding: 60px 20px;
             position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, #006400 0%, #90EE90 100%);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         header img {
-            width: 100%;
-            max-height: 300px;
-            object-fit: cover;
             position: absolute;
             top: 0;
             left: 0;
-            z-index: -1;
-            opacity: 0.3;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            z-index: 0;
         }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
+        .header-content {
             position: relative;
             z-index: 1;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         h2 {
-            font-size: 1.8em;
+            font-size: 2em;
+            font-weight: 400;
+            margin-bottom: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .benefits {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        .benefit-item {
+            flex: 1;
+            min-width: 200px;
             padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+        .benefit-item h3 {
+            font-size: 1.5em;
+            color: #006400;
+            margin-bottom: 10px;
         }
         .image-section img {
             width: 100%;
-            max-width: 600px;
+            max-width: 700px;
             height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin: 20px 0;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            margin: 10px 0;
-            font-size: 1.2em;
-        }
         form {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            margin: 20px auto;
-            max-width: 400px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            max-width: 450px;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         input[type="email"] {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 12px;
+            margin: 15px 0;
+            border: 2px solid #90EE90;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+        input[type="email"]:focus {
+            border-color: #006400;
+            outline: none;
         }
         button {
-            background-color: #006400;
-            color: white;
-            padding: 10px 20px;
+            background: linear-gradient(90deg, #006400, #90EE90);
+            color: #fff;
+            padding: 12px 25px;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            font-weight: 700;
+            transition: transform 0.3s ease, background 0.3s ease;
         }
         button:hover {
-            background-color: #004d00;
+            transform: scale(1.05);
+            background: linear-gradient(90deg, #004d00, #70d070);
         }
         footer {
+            background-color: #006400;
+            color: #fff;
+            padding: 20px;
             margin-top: 40px;
-            font-size: 0.9em;
-            color: #666;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; }
+            .benefits { flex-direction: column; }
+            form { padding: 20px; }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="https://via.placeholder.com/800x300?text=Golf+Sim+Bay" alt="Golf Simulator Bay">
-        <h1>Beat Alberta Winters: Exclusive 24/7 Golf Sim Access</h1>
-        <p>Join the waitlist for free and get early priority—plus a bonus Winter Swing Guide!</p>
+        <div class="header-content">
+            <h1>Grind your Golf Swing this Winter: Exclusive 24/7 Golf Sim Access:</h1>
+            <p>Join the waitlist for free and get early priority booking</p>
+        </div>
     </header>
 
     <div class="container">
-        <h2>Why Join Our Hyper-Local Golf Gym?</h2>
-        <ul>
-            <li>Unlimited Bookings</li>
-            <li>Limited Memberships</li>
-            <li>Trackman Simulator</li>
-        </ul>
+        <h2>Why Join?</h2>
+        <div class="benefits">
+            <div class="benefit-item"><h3>Private and Hastle Free Access 24/7</h3></div>
+            <div class="benefit-item"><h3>Limited Memberships- Unlimited Booking Slots</h3></div>
+            <div class="benefit-item"><h3>Tour Trusted Trackman Simulator</h3></div>
+        </div>
 
         <div class="image-section">
-            <img src="https://via.placeholder.com/600x400?text=Winter+Golf+Scene" alt="Winter Golf Scene">
+            <img src=https://swinggolflounge.ca/wp-content/uploads/2020/11/Swing-Golf-Lounge-Virtual-Golf-Toronto-01.jpg>
         </div>
 
         <h2>Reserve a Membership</h2>
         <p>Enter your email to join the waitlist and receive your free guide instantly.</p>
 
-        <!-- Netlify Form: Handles submissions automatically -->
         <form name="waitlist" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="waitlist">
             <input type="email" name="email" placeholder="Your Email" required>
