@@ -29,7 +29,7 @@
             line-height: 1.6;
             overflow-x: hidden;
             padding-top: 160px;
-            scroll-behavior: smooth; /* Enable smooth scrolling */
+            scroll-behavior: smooth;
         }
         header {
             position: fixed;
@@ -50,6 +50,13 @@
             position: relative;
             z-index: 1;
             padding: 10px 20px 0;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+        }
+        header a strong {
+            font-weight: 700; /* Bold "Join the waitlist" */
         }
         h1 {
             font-size: 2em;
@@ -277,20 +284,15 @@
     <header>
         <div class="header-content">
             <h1>Grind your Golf Swing this Winter: Exclusive 24/7 Golf Sim Access</h1>
-            <p><a href="#signup-section">Join the waitlist</a> for free and get early priority booking</p>
+            <p><a href="#signup-section"><strong>Join the waitlist</strong></a> and get early priority booking</p>
         </div>
     </header>
     <div class="container">
-        <h2>Why Join?</h2>
+        <p class="business-blurb">Golf Grind Red Deer offers a top-of-line indoor golf simulator facility, providing winter time access to premium Trackman technology for practice and improvement. A monthly subscription provides you unlimited access to a private golf simulator bay so you can take your game to the next level.</p>
         <div class="benefits">
             <div class="benefit-item"><h3>Private and Hassle Free Access 24/7</h3></div>
             <div class="benefit-item"><h3>Limited Memberships- Unlimited Booking Slots</h3></div>
             <div class="benefit-item"><h3>Tour Trusted Trackman Simulator</h3></div>
-        </div>
-        <p class="business-blurb">Golf Grind Red Deer offers a state-of-the-art indoor golf simulator facility, providing year-round access to premium Trackman technology for practice and improvement, tailored for golf enthusiasts in Central Alberta.</p>
-        <div class="image-section">
-            <img src="https://swinggolflounge.ca/wp-content/uploads/2020/11/Swing-Golf-Lounge-Virtual-Golf-Toronto-01.jpg" alt="golf simulator data tracking">
-            <img src="https://a.storyblok.com/f/117513/1200x630/5cecb7dc8f/trackman_golf_simulator.jpg" alt="golf simulator data tracking">
         </div>
         <h2 id="signup-section">Sign up to Start Improving</h2>
         <form name="waitlist" method="POST" data-netlify="true" id="mainForm">
@@ -300,6 +302,10 @@
             <input type="tel" name="phone" placeholder="Phone" required>
             <button type="submit">Join Waitlist</button>
         </form>
+        <div class="image-section">
+            <img src="https://swinggolflounge.ca/wp-content/uploads/2020/11/Swing-Golf-Lounge-Virtual-Golf-Toronto-01.jpg" alt="golf simulator data tracking">
+            <img src="https://a.storyblok.com/f/117513/1200x630/5cecb7dc8f/trackman_golf_simulator.jpg" alt="golf simulator data tracking">
+        </div>
         <p>We will contact you soon with more details</p>
     </div>
     <footer>
